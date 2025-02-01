@@ -12,7 +12,7 @@ source a1-env/bin/activate
 Then ensure you have the following packages installed:
 numpy
 install by running the following command in the terminal:
-pip intsall -r requirements.txt
+pip install -r requirements.txt
 
 After you have installed Python 3, you can run the program by executing the following command in the terminal:
 

@@ -30,7 +30,7 @@ def bisection_method(func, a, b, error_threshold):
         else:
             right = p
 
-    return iter
+    return p, iter
 
 
 #fixed point iter
@@ -42,7 +42,7 @@ def fixed_point_iter(func, p0=1.5, tol = 0.000001, N0=50):
         p = func(p0)
         print(i, ":", p)
         if (math.isnan(p)):
-            print("result diverges")
+            print("Result diverges")
             return p, i, "fail"
         if (abs(p - p0) < tol):
             return p, i, "success"
@@ -53,16 +53,15 @@ def fixed_point_iter(func, p0=1.5, tol = 0.000001, N0=50):
 
 #newtons
 import numpy as np
-def newtons(func, func_prime, a, b, error_threshold, max = 1000):
+def newtons(func, func_prime, p0, error_threshold, maxIter = 1000):
     p = np.zeros(1000)
-    p[0] = (a + b) / 2
+    p[0] = p0
     print("n :", 0, "p[0]: ", p[0])
     n = 1
-    while (n < max):
-        p[n] = p[n - 1] - func(p[n - 1]) / func_prime(p[n - 1])
-        if (abs(p[n] - p[n - 1]) < error_threshold):
-            print("n :", n, f"p[{n}]: ", p[n])
-            return n
+    while (n < maxIter):
+        p[n] = p[n - 1] - (func(p[n - 1]) / func_prime(p[n - 1]))
         print("n :", n, f"p[{n}]: ", p[n])
+        if (abs(p[n] - p[n - 1]) < error_threshold):
+            return n
         n += 1
     print("Method failed to converge")
