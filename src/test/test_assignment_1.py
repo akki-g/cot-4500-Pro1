@@ -20,22 +20,12 @@ def test1(x):
     return (x - x*x*x - 4*x*x + 10)
 def test2(x):
     return ((10 - x**3)**0.5)/2
-def test3(x):
-    return (x**2 - 1)/3
-def test4(x):
-    return ((1-x)/x) + (1/math.tan(x))
-
 fixedPointX, fixedPointIter, fixedPointStatus = fixed_point_iter(test1)
 print("Fixed point iteration with x-x^3-4x^2+10: ", fixedPointX, " after ", fixedPointIter, " iterations. Status: ", fixedPointStatus)
 
 fixedPointX, fixedPointIter, fixedPointStatus = fixed_point_iter(test2)
 print("Fixed point iteration with (10-x^3)^0.5/2: ", fixedPointX, " after ", fixedPointIter, " iterations. Status: ", fixedPointStatus)
 
-fixedPointX, fixedPointIter, fixedPointStatus = fixed_point_iter(test3, p0=0)
-print("Fixed point iteration with (x^2-1)/3: ", fixedPointX, " after ", fixedPointIter, " iterations. Status: ", fixedPointStatus)
-
-fixedPointX, fixedPointIter, fixedPointStatus = fixed_point_iter(test4, p0=4, tol=1e-4)
-print("Fixed point iteration with tan(x): ", fixedPointX, " after ", fixedPointIter, " iterations. Status: ", fixedPointStatus)
 print("\n\n\n")
 
 #newtons test

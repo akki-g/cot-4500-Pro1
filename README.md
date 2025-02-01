@@ -1,10 +1,10 @@
 # cot-4500-Pro1
 
 
-To run the program, you need to have Python 3 installed on your computer. You can download it from the official website: https://www.python.org/downloads/
+To run the program, you need to have Python 3 installed. 
 
 Create a virtual environment by running the following command in the terminal:
-python -m venv a1-env
+python3 -m venv a1-env
 
 Activate the virtual environment by running the following command in the terminal:
 source a1-env/bin/activate

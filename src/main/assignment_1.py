@@ -5,14 +5,14 @@ def root_approximation(x0=1.5, tol=0.000001, max = 1000):
     diff = x0
     x = x0
 
-    print("iter: ", iter, " x: ", x, " diff: ", diff)
+    print(iter, ": ", x)
     while (diff > tol and iter < max):
         iter += 1
         y = x
         x = (x / 2) + (1 / x)
-        print("iter: ", iter, " x: ", x, " diff: ", diff)
+        print(iter, ": ", x)
         diff = abs(x - y)
-    print("Convergence reached after ", iter, " iterations")
+    print("Convergence after", iter, "iterations")
     return x, iter
 
 
@@ -35,13 +35,12 @@ def bisection_method(func, a, b, error_threshold):
 
 #fixed point iter
 import math
-
 def fixed_point_iter(func, p0=1.5, tol = 0.000001, N0=50):
     i = 1
     p = 0
-    p0 = float(p0)
     while (i <= N0):
         p = func(p0)
+        print(i, ":", p)
         if (math.isnan(p)):
             print("result diverges")
             return p, i, "fail"
