@@ -18,7 +18,7 @@ numpy
 install by running the following command in the terminal:
 pip install -r requirements.txt
 
-After you have installed Python 3, you can run the program by executing the following command in the terminal:
+You can run the program by executing the following command in the terminal:
 
 python -m src.test.test_assignment_1
 
