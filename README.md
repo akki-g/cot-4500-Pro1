@@ -7,7 +7,8 @@ Create a virtual environment by running the following command in the terminal:
 python3 -m venv a1-env
 
 Activate the virtual environment by running the following command in the terminal:
-source a1-env/bin/activate
+source a1-env/bin/activate (if running on macOs)
+a1-env\Scripts\activate  (if running on windows)
 
 Then ensure you have the following packages installed:
 numpy
