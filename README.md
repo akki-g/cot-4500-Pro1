@@ -21,4 +21,5 @@ python -m src.test.test_assignment_1
 
 The program will output the results of the test cases in the terminal.
 
-
+Example output
+![alt text](image.png)
