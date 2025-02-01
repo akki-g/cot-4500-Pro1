@@ -10,7 +10,7 @@ Activate the virtual environment by running the following command in the termina
 source a1-env/bin/activate
 
 Then ensure you have the following packages installed:
-math
+numpy
 install by running the following command in the terminal:
 pip intsall -r requirements.txt
 

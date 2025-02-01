@@ -35,6 +35,7 @@ def bisection_method(func, a, b, error_threshold):
 
 #fixed point iter
 import math
+
 def fixed_point_iter(func, p0=1.5, tol = 0.000001, N0=50):
     i = 1
     p = 0
@@ -52,13 +53,17 @@ def fixed_point_iter(func, p0=1.5, tol = 0.000001, N0=50):
 
 
 #newtons
-def newtons(func, func_prime, a, b, error_threshold):
-    p = func((a+b)/2)
-    iter = 0
-    max = 1000
-    while (iter < max):
-        iter += 1
-        p = p - func(p) / func_prime(p)
-        if (abs(func(p)) < error_threshold):
-            break
-    return iter
+import numpy as np
+def newtons(func, func_prime, a, b, error_threshold, max = 1000):
+    p = np.zeros(1000)
+    p[0] = (a + b) / 2
+    print("n :", 0, "p[0]: ", p[0])
+    n = 1
+    while (n < max):
+        p[n] = p[n - 1] - func(p[n - 1]) / func_prime(p[n - 1])
+        if (abs(p[n] - p[n - 1]) < error_threshold):
+            print("n :", n, f"p[{n}]: ", p[n])
+            return n
+        print("n :", n, f"p[{n}]: ", p[n])
+        n += 1
+    print("Method failed to converge")

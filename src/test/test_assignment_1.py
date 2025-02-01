@@ -23,7 +23,7 @@ def test2(x):
 def test3(x):
     return (x**2 - 1)/3
 def test4(x):
-    return math.tan(x)
+    return ((1-x)/x) + (1/math.tan(x))
 
 fixedPointX, fixedPointIter, fixedPointStatus = fixed_point_iter(test1)
 print("Fixed point iteration with x-x^3-4x^2+10: ", fixedPointX, " after ", fixedPointIter, " iterations. Status: ", fixedPointStatus)
@@ -43,9 +43,10 @@ print("\n\n\n")
 def test(x):
     return math.cos(x) - x
 def test_prime(x):
-    return -math.sin(x) - 1
-newtIter = newtons(test, test_prime, 0, (math.pi/2), 1e-3)
-print("Newtons method with a=0 b=π/2 converges after", newtIter, " iterations")
-newtIter = newtons(test, test_prime, 0.5, (math.pi/4), 1e-3)
-print("Newtons method with a=0.5 b=π/4 converges after", newtIter, " iterations")
-
+    return (-math.sin(x) - 1)
+error = 1e-10
+newtIter = newtons(test, test_prime, 0, (math.pi/2), error)
+print(f"Newtons with a=0 b=π/2 with error tolerance {error} converges after {newtIter} iterations")
+error = 1e-4
+newtIter = newtons(test, test_prime, 0, (math.pi/2), error)
+print(f"Newtons with a=0 b=π/2 with error tolerance {error} converges after {newtIter} iterations")
