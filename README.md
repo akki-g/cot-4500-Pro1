@@ -1,5 +1,7 @@
 # cot-4500-Pro1
 
+First clone the repo using
+git clone https://github.com/akki-g/cot-4500-Pro1
 
 To run the program, you need to have Python 3 installed. 
 
